@@ -16,32 +16,40 @@ exports.getUserById = async (req, res) => {
   }
 };
 
-// Get user profile
-exports.getUserProfile = async (req, res) => {
-  try {
-    const user = req.user; // `req.user` is set by authMiddleware
-    if (!user) return res.status(404).json({ message: 'User not found' });
-    res.json(user);
-  } catch (error) {
-    console.error('Error fetching user profile:', error.message);
-    res.status(500).json({ message: 'Server error' });
-  }
-};
-
-// Update user profile
+// Update user information
 exports.updateUserProfile = async (req, res) => {
   try {
+    console.log('Incoming request body:', req.body); // Log request body
+    console.log('Files:', req.files); // Log uploaded files
+    console.log('User from token:', req.user.id); // Log user ID from token
+
     const { fullName, email, phoneNumber, city } = req.body;
-    const updatedUser = await User.findByIdAndUpdate(
-      req.user._id, // Use user ID from authMiddleware
-      { fullName, email, phoneNumber, city },
-      { new: true, runValidators: true }
-    );
-    if (!updatedUser) return res.status(404).json({ message: 'User not found' });
+    const userId = req.user.id; // Extract user ID from authenticated token
+
+    // Prepare update data
+    const updateData = {
+      fullName,
+      email,
+      phoneNumber,
+      city,
+      profilePicture: req.files['profilePicture'] ? req.files['profilePicture'][0].path : undefined,
+      coverPhoto: req.files['coverPhoto'] ? req.files['coverPhoto'][0].path : undefined
+    };
+
+    // Remove undefined fields
+    Object.keys(updateData).forEach(key => updateData[key] === undefined && delete updateData[key]);
+
+    // Update user in the database
+    const updatedUser = await User.findByIdAndUpdate(userId, updateData, { new: true });
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    console.log('Updated user data:', updatedUser); // Log updated user data
     res.json(updatedUser);
   } catch (error) {
-    console.error('Error updating user profile:', error.message);
+    console.error('Error updating user profile:', error);
     res.status(500).json({ message: 'Server error' });
   }
 };
-

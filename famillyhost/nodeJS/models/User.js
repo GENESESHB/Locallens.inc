@@ -7,6 +7,8 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   phoneNumber: { type: String, required: true },
   city: { type: String, required: true },
+  profilePicture: String, // URL to profile picture
+  coverPhoto: String,
   isEmailVerified: { type: Boolean, default: false },
   emailVerificationToken: { type: String },
   isPhoneVerified: { type: Boolean, default: false },

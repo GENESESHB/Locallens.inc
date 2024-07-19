@@ -136,17 +136,19 @@ form input {
   box-shadow: 2px 2px 228px 212px rgb(0 0 0 / 36%);
   z-index: 1000;
   width: 80%;
+  HEIGHT: 90%;
   max-width: 500px;
   overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .containerform {
     width: 100%;
+    MARGIN-TOP: 30px;
     display: flex;
     flex-direction: column;
     position: relative;
     /* height: auto; */
-    HEIGHT: 439px;
+    HEIGHT: 1050px;
 }
 
 .containerform div {
@@ -195,8 +197,8 @@ form input {
 
 .cancel-button {
     position: absolute;
-    top: -11px;
-    right: 0px;
+    top: 5px;
+    right: 5px;
     padding-top: 6px;
     width: 41PX;
     background: #ffffff;
@@ -208,6 +210,10 @@ form input {
 
 .cancel-button:hover {
   color: #ff306a; /* Change color on hover if desired */
+}
+
+.add-sr {
+   width: 100%;
 }
 
 @media (max-width: 767px) {

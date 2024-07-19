@@ -26,11 +26,11 @@ const Profilehost = () => {
     architectHomeName: '',
     architectHomeImage: null,
     eatName: '',
-    eatImages: null,
+    eatImages: [],
     moroccanDecorationName: '',
     moroccanDecorationImages: null,
     clothingName: '',
-    clothingImages: null,
+    clothingImages: [],
   });
 
   useEffect(() => {
@@ -58,7 +58,15 @@ const Profilehost = () => {
   const handleServiceChange = (e) => {
     const { name, value, files } = e.target;
     if (files) {
-      setServiceData((prevData) => ({ ...prevData, [name]: files[0] }));
+      if (name === 'clothingImages' || name === 'eatImages') {
+        if (files.length <= 3) {
+          setServiceData((prevData) => ({ ...prevData, [name]: files }));
+        } else {
+          alert("You can upload a maximum of 3 images");
+        }
+      } else {
+        setServiceData((prevData) => ({ ...prevData, [name]: files[0] }));
+      }
     } else {
       setServiceData((prevData) => ({ ...prevData, [name]: value }));
     }
@@ -95,7 +103,13 @@ const Profilehost = () => {
 
     Object.keys(serviceData).forEach(key => {
       if (serviceData[key]) {
-        serviceDataToSend.append(key, serviceData[key]);
+        if (key === 'clothingImages' || key === 'eatImages') {
+          Array.from(serviceData[key]).forEach((file) => {
+            serviceDataToSend.append(key, file);
+          });
+        } else {
+          serviceDataToSend.append(key, serviceData[key]);
+        }
       }
     });
 
@@ -238,10 +252,10 @@ const Profilehost = () => {
             </div>
             <div>
               <label>
-                <img src="path/to/eat-images-icon.png" alt="Images of Eat" />
-                Images of Eat:
+                <img src="path/to/eat-images-icon.png" alt="Eat Images" />
+                Eat Images:
               </label>
-              <input type="file" name="eatImages" onChange={handleServiceChange} required/>
+              <input type="file" name="eatImages" onChange={handleServiceChange} multiple required/>
             </div>
             <div>
               <label>
@@ -252,8 +266,8 @@ const Profilehost = () => {
             </div>
             <div>
               <label>
-                <img src="path/to/moroccan-decoration-images-icon.png" alt="Images of Moroccan Decoration" />
-                Images of Moroccan Decoration:
+                <img src="path/to/moroccan-decoration-images-icon.png" alt="Moroccan Decoration Images" />
+                Moroccan Decoration Images:
               </label>
               <input type="file" name="moroccanDecorationImages" onChange={handleServiceChange} required/>
             </div>
@@ -266,20 +280,20 @@ const Profilehost = () => {
             </div>
             <div>
               <label>
-                <img src="path/to/clothing-images-icon.png" alt="Images of Clothing" />
-                Images of Clothing:
+                <img src="path/to/clothing-images-icon.png" alt="Clothing Images" />
+                Clothing Images:
               </label>
-              <input type="file" name="clothingImages" onChange={handleServiceChange} required/>
+              <input type="file" name="clothingImages" onChange={handleServiceChange} multiple required/>
             </div>
-            <div className="button-group">
-              <button type="submit">Add Service</button>
+          </div>
+          <div className="button-group">
+              <button type="submit" className="add-sr" >Add Service</button>
               <button type="button" className="cancel-button" onClick={() => setServiceMode(false)} required>
                 <FontAwesomeIcon icon={faTimes} />
               </button>
-            </div>
           </div>
         </form>
-       </div>
+      </div>
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Register.css';
+import './styles/Register.css';
 import logo from '../assets/lg.png';
 
 const ForgotPassword = () => {

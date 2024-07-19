@@ -49,6 +49,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = (newToken) => {
+    console.log('Login Token:', newToken); // Debugging
     setToken(newToken);
     localStorage.setItem('token', newToken);
     fetchUserData(newToken); // Fetch user data after login

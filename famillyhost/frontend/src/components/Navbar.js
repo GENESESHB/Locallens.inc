@@ -75,8 +75,8 @@ const Navbar = () => {
           <div className={`dropdown-content ${isOpen ? 'show' : ''}`}>
             {isLoggedIn ? (
               <Link
-                to="/profile"
-                onClick={() => handleLinkClick('/profile')}
+                to="/Profilehost"
+                onClick={() => handleLinkClick('/Profilehost')}
                 className={activeLink === '/profile' ? 'active' : ''}
               >
                 <FontAwesomeIcon icon={faUser} className="icon-spacing" /> Profile

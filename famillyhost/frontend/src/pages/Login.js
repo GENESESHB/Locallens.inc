@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext'; // Ensure this path is correct
-import './Login.css';
+import './styles/Login.css';
 import logo from '../assets/lg.png';
 
 const Login = () => {
@@ -33,10 +33,10 @@ const Login = () => {
       setLoading(false);
       console.log('Login successful:', response.data);
       setMessage('Login successful');
+      navigate('/Profilehost');
       const token = response.data.token;
-      console.log('Received token:', token); // Debugging
-      await login(token); // Set the authentication token in context
-      navigate('/Profilehost'); // Redirect to the Controller page
+      console.log('Received token:', token);
+      await login(token);
     } catch (error) {
       setLoading(false);
       console.error('Login failed:', error);

@@ -1,6 +1,7 @@
 // src/pages/ResetPassword.js
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import './styles/Register.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 

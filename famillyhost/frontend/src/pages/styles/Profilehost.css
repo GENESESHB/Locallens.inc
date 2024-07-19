@@ -1,0 +1,283 @@
+/* Profilehost.css */
+
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cover-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  top: -42px;
+  left: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.name h1 {
+  font-size: 22px;
+  position: relative;
+  top: -112px;
+  left: 176px;
+}
+
+.infoprs p {
+  width: 100%;
+  font-size: 13px;
+}
+
+.info-service-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.infoprs {
+  border-right: 1px solid #ccc;
+  display: inline-table;
+  position: relative;
+  top: -60px;
+  padding-right: 20px;
+}
+
+.name {
+  border-top: 1px solid #ccc;
+  position: relative;
+  top: -22px;
+}
+
+.editinfo button {
+  width: 60px;
+}
+
+/* Add Service Button and Form Styles */
+.info-and-service {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.add-service-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ff306a;
+  border-radius: 9px;
+  padding: 0px 16px;
+  background-color: #ecf3ff5c;
+  height: 60px;
+  width: 49%;
+  margin-left: 20px; /* space between info and add service button */
+}
+
+.add-service-icon {
+    font-size: 18px;
+    border: 1PX SOLID #CCC;
+    margin-right: 8px;
+    PADDING: 10px;
+    border-radius: 50%; 
+}
+
+.add-service {
+  background-color: #ff306a; /* Changed background color */
+  color: #ffffff;
+  border: 1px solid #ff306a;
+  width: 90%;
+  padding: 6px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 9px;
+  position: relative;
+  top: 6px;
+  height: 33PX;
+}
+.add-service:hover {
+   box-shadow: #d31248;
+   background-color: #d31248;
+   box-shadow: 2px 2px 228px 212px rgb(0 0 0 / 36%);
+}
+   
+/* Fixed form styling */
+.service-form {
+  position: fixed;
+  top: 10%; /* Adjust top position as needed */
+  left: 50%;
+  transform: translate(-50%, -10%);
+  background-color: #ECF3FF;
+  padding: 20px;
+  box-shadow: 2px 2px 228px 212px rgb(0 0 0 / 36%);
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.containerform {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* height: auto; */
+    HEIGHT: 439px;
+}
+
+.containerform div {
+  margin-bottom: 15px;
+}
+
+.containerform label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.containerform label img {
+  width: 24px; /* Adjust icon size */
+  height: 24px;
+  margin-right: 8px;
+}
+
+.containerform input[type="text"],
+.containerform input[type="file"] {
+  width: calc(100% - 40px); /* Adjust width to accommodate icon */
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.service-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.post-submit,
+.cancel-submit {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.cancel-submit {
+  background-color: #dc3545;
+}
+
+.cancel-button {
+    position: absolute;
+    top: -11px;
+    right: 0px;
+    padding-top: 6px;
+    width: 41PX;
+    background: #ffffff;
+    border: 1px solid #ff306a;
+    cursor: pointer;
+    color: #4a3e3e;
+    font-size: 27px;
+}
+
+.cancel-button:hover {
+  color: #ff306a; /* Change color on hover if desired */
+}
+
+@media (max-width: 767px) {
+  .cover-photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .name h1 {
+    font-size: 11px;
+    position: relative;
+    width: 200px;
+    top: -81px;
+    left: 116px;
+  }
+
+  .info-and-service {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .infoprs p {
+    font-size: 8px;
+  }
+
+  .infoprs {
+    top: -45px;
+    padding-right: 10px;
+    border-right: 1px solid #ccc;
+  }
+
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    top: -42px;
+    left: 10px;
+  }
+
+  .profile-container {
+    padding: 10px;
+  }
+
+  .editinfo {
+    font-size: 9px;
+    width: 83%;
+    border-radius: 4px;
+    height: 33px;
+  }
+
+  .add-service-container {
+        width: 53%;
+        padding: 10px;
+        height: 38px;
+        margin-top: 0px;
+  }
+
+  .add-service-icon {
+        font-size: 14px;
+        margin-right: 5px;
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 50%;
+        background: #FFFFFE;
+  }
+
+  .add-service {
+        font-size: 14px;
+        padding: 6px 12px;
+        height: 29px;
+        color: #ffffff;
+        background-color: #ff306a;
+  }
+}

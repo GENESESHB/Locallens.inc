@@ -25,7 +25,9 @@
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.30.2",
     "showdown": "^2.1.0",
+    "slick-carousel": "^1.8.1",
     "tailwindcss": "^3.4.4",
     "web-vitals": "^2.1.4"
   },

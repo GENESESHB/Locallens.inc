@@ -1,5 +1,78 @@
 /* Profilehost.css */
+/* In your main CSS file or component CSS file */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
+.service-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Space between service cards */
+}
+
+.service-card {
+  width: 100%;
+  max-width: 600px; /* Adjust width as needed */
+  padding: 16px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.carousel-container {
+  border-radius: 20px;
+  width: 100%;
+  height: 300px; /* Adjust height as needed */
+  overflow: hidden; /* Hide overflowed content */
+}
+.slick-prev {
+    left: 25px;
+    z-index: 1;
+    TOP: 157px;
+    FONT-SIZE: 30px;
+}
+.service-card p {
+  margin: 10px 0; /* Add some margin for better visibility */
+  color: #333; /* Ensure text color is visible */
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+  border: none; /* Remove any border */
+  box-shadow: none; /* Remove any box shadow */
+}
+
+.slick-slider {
+  margin: 0;
+  padding: 0;
+}
+
+.slick-slide {
+  outline: none;
+}
+
+.slick-dots {
+  bottom: 10px; /* Adjust the position of the dots if needed */
+}
+.slick-next {
+    font-size: 30PX;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 340px;
+    right: 12px;
+    left: 92%;
+    top: 157PX;
+    padding: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
 .profile-container {
   max-width: 800px;
   margin: 0 auto;
@@ -101,7 +174,7 @@ form input {
     border: 1PX SOLID #CCC;
     margin-right: 8px;
     PADDING: 10px;
-    border-radius: 50%; 
+    border-radius: 50%;
 }
 
 .add-service {
@@ -124,7 +197,7 @@ form input {
    background-color: #d31248;
    box-shadow: 2px 2px 228px 212px rgb(0 0 0 / 36%);
 }
-   
+
 /* Fixed form styling */
 .service-form {
   position: fixed;

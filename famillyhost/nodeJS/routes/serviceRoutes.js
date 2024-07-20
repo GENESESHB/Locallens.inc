@@ -1,9 +1,10 @@
+
 // serviceRoutes.js
 
 const express = require('express');
 const router = express.Router();
 const upload = require('../config/multerConfig');
-const { addService } = require('../controllers/serviceController');
+const { addService, getServicesByUserId } = require('../controllers/serviceController');
 
 // POST route to add a new service
 router.post('/service', upload.fields([

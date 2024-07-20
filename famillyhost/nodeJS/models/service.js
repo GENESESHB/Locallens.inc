@@ -19,6 +19,6 @@ const serviceSchema = new Schema({
   moroccanDecorationImages: { type: [String] },
   clothingName: { type: String },
   clothingImages: { type: [String] },
-});
+}, { timestamps: true }); // Add this line
 
 module.exports = mongoose.model('Service', serviceSchema);

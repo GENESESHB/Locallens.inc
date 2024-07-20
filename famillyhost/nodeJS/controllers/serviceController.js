@@ -50,10 +50,14 @@ exports.addService = async (req, res) => {
 };
 
 exports.getServicesByUserId = async (req, res) => {
-  const { userId } = req.params;
+  const { userId } = req.params; // Correctly extract userId from req.params
+  console.log('user_id', userId);
+  console.log(`Received request to fetch services for userId: ${userId}`); // Log received userId
 
   try {
     const services = await Service.find({ userId });
+    console.log('Fetched services:', services); // Log fetched services
+
     res.status(200).json(services);
   } catch (error) {
     console.error('Error fetching services:', error);

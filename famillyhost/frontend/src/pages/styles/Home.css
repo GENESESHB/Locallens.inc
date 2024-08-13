@@ -3,17 +3,52 @@
   flex-wrap: wrap;
   gap: 16px; /* Space between service cards */
 }
-
+.pagination button {
+    width: 35px;
+    border: 1px solid #d73953;
+    border-radius: 0px;
+    margin: 11px;
+    background: #ffffff;
+    color: #090909;
+}
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+.pagination button:hover { 
+    background: #d73953;
+    color: #ffffff;
+}
+.pagination button.active {
+    background: #d73953;
+    color: #ffffff;
+    width: 45px;
+    height: 45px;
+}
+.carcontainer {
+    border-radius: 20px;
+    width: 100%;
+    height: 196px;
+    overflow: hidden;
+}
+p {
+    POSITION: relative;
+    LEFT: 17px;
+    font-size: 13PX;
+    MARGIN: 12PX;
+}
 .service-card {
   width: calc(25% - 16px); /* Four cards per row, adjust spacing */
-  background-color: #fff;
-  border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px; /* Space below each card */
 }
-
+.slick-dots li {
+  width: 0px;
+}
 .service-card img {
   width: 100%;
   height: 200px;
@@ -62,4 +97,9 @@
 .slick-prev:before, .slick-next:before {
   font-size: inherit; /* Ensure the font size is inherited */
   color: inherit; /* Ensure the color is inherited */
+}
+@media (max-width: 767px) {
+   .service-card {
+       width: 99%;
+   }
 }

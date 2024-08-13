@@ -1,0 +1,190 @@
+/* styles/product.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+.header-booking {
+    background: white;
+    width: 100%;
+    top: 110px;
+    left: 0PX;
+    height: 62px;
+    /* font-size: 38px; */
+    position: fixed;
+    Z-INDEX: 1000;
+}
+.book-now-button {
+    position: fixed;
+    font-size: 16px;
+    background: #c7280c;
+    color: white;
+    PADDING: 6PX;
+    TOP: 120px;
+    font-size: 20px;
+    cursor: pointer;
+    Z-INDEX: 100;
+    border: none;
+    box-shadow: 0 0 30px rgba(201, 57, 57, 0.3);
+    height: auto;
+    right: 20px;
+    width: 108px;
+}
+.grand-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  WIDTH: 100%;
+}
+
+.icon-item {
+    padding-top: 15px;
+    background: white;
+    display: flex;
+    margin-right: 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 321px;
+    width: 33%;
+}
+
+.icon {
+  color: #493c3c;
+  font-size: 60px; /* Adjust size as needed */
+  margin-bottom: 20px;
+}
+
+.icon-item p {
+    color: #493c3c;
+    font-size: 20px;
+    margin: 27px;
+    MAX-WIDTH: 100%;
+    FONT-WEIGHT: 100;
+}
+
+.highlight {
+  color: #493c3c; /* Set the text color */
+  cursor: pointer;
+  font-weight: lighter;
+  line-height: 1.4; /* Adjust line height for spacing */
+  text-align: center; /* Center align the text */
+  margin: 20px 0; /* Add margin to top and bottom */
+  padding: 10px; /* Add padding if needed */
+}
+.book-now-button:hover {
+  color: #ff306a; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0 0 20px 8px rgba(201, 57, 57, 0.3);
+  background: white;
+}
+
+.book-now-button:hover .fa-chevron-left {
+  color: #ff306a; /* Change icon color on hover */
+}
+
+@media (max-width: 768px) {
+   .icon-item {
+	  width: 100%;
+	  padding-top: 38PX;
+	  margin-bottom: 10px;
+  }
+  .grand-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+  }
+}
+
+.service-details {
+  padding: 0px;
+  MARGIN-TOP: 60PX;
+  BACKGROUND: #ECF3FF;
+  max-width: 100%;
+  margin: auto;
+}
+
+.service-section {
+  margin-bottom: 40px;
+  margin-top: 3px;
+}
+
+
+img.image-deco.shadow {
+    WIDTH: 800PX;
+    HEIGHT: 345PX;
+    OVERFLOW: hidden;
+}
+h1.highlight {
+    POSITION: relative;
+    TOP: 270PX;
+    background: #ff306a;
+    color: white;
+    font-size: 24px;
+    MAX-WIDTH: 60%;
+    left: 17px;
+}
+.service-section h2,
+.service-section h3 {
+  color: #493c3c; /* Set the text color */
+  font-weight: lighter;
+  line-height: 1.4; /* Adjust line height for spacing */
+  text-align: center; /* Center align the text */
+  margin: 20px 0; /* Add margin to top and bottom */
+  padding: 10px;
+  border-bottom: 2px solid #ff306a;
+}
+
+.service-section p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.images-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-small, .image-medium, .image-large {
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-small {
+  width: 30%;
+  height: 300PX;
+  object-fit: cover;
+}
+
+.image-medium {
+  width: 45%;
+  height: auto;
+  object-fit: cover;
+}
+.image-large {
+   width: 100%;
+   height: 300PX;
+   margin-top: -45px;
+   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .service-section h1,
+  .service-section h2,
+  .service-section h3 {
+    font-size: 1.25rem;
+  }
+
+  .image-small, .image-medium, .image-large {
+    width: 100%;
+  }
+  .service-details {
+    WIDTH: 90%;
+  }
+}

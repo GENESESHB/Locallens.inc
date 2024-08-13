@@ -1,0 +1,215 @@
+.booking-form {
+  padding: 90px;
+  max-width: 1200px;
+  margin: 0 auto;
+  BACKGROUND: aliceblue;
+}
+.benefit {
+    margin: 15px;
+    font-size: 37px;
+    color: #493c3c;
+}
+.ftdon {
+    color: green;
+    FONT-SIZE: 26px;
+}
+.ftdon1 {
+    color: orange;
+    FONT-SIZE: 26px;
+}
+.reserve {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1PX SOLID #ff306a;
+    BORDER-RADIUS: 22PX;
+    flex-direction: column;
+    background: white;
+    width: 360px;
+    padding: 16px;
+    box-shadow: 0 0 30px rgba(201, 57, 57, 0.3);
+    POSITION: RELATIVE;
+    left: 30%;
+    margin-bottom: 37PX;
+}
+.reserve h3 {
+    background: #ff306a;
+    color: white;
+    padding: 10px;
+    width: fit-content;
+}
+input[type="date"] {
+    WIDTH: 80%;
+    height: 21px;
+    padding: 6px;
+}
+input[type="tel"] {
+    WIDTH: 80%;
+    height: 21px;
+    padding: 6px;
+}
+.bookh3 {
+    BACKGROUND: #e73939;
+    WIDTH: fit-content;
+    PADDING: 10px;
+    color: white;
+    box-shadow: 0 0 30px rgba(201, 57, 57, 0.3);
+}
+.bookh3:hover {
+  color: #ff306a; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+  BACKGROUND: WHITE;
+}
+
+.bookh3:hover .fa-chevron-left {
+  color: #ff306a; 
+}
+.ppicture {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: -62px;
+    left: -12%;
+    margin-right: 20PX;
+    border-radius: 50%;
+    object-fit: cover;
+    Z-INDEX: 2;
+    box-shadow: 2px 2px 8px 0px rgb(0 0 0 / 36%);
+}
+.user-info h1 {
+    width: 367px;
+    padding: 10px;
+    BACKGROUND: white;
+    border: 1px solid #ff306a;
+    margin-top: -120px;
+    height: 61px;
+    position: relative;
+    COLOR: #493c3c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    BORDER-RADIUS: 22PX 22px 0 0;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  max-width: 360PX;
+  BACKGROUND: white;
+  flex-wrap: wrap;
+  padding: 0px;
+  border: 1px solid #ff306a;
+  border-radius: 22px;
+  box-shadow: 2px 2px 8px 0px rgb(0 0 0 / 36%);
+}
+.user-info h4 {
+  position: relative;
+  background: none;
+  line-height: 1.5;
+  top: 3PX;
+  border-bottom: 1px solid #ff306a;
+  margin-top: 0px;
+  padding: 10px;
+  width: -webkit-fill-available;
+  font-size: medium;
+  font-weight: 400;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  COLOR:  #121010;
+}
+.image-slider {
+  position: relative;
+}
+.userwelc {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.slider-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 10px;
+  box-shadow: 0 0 30px rgba(201, 57, 57, 0.3);
+}
+
+.slider-image.large {
+  height: 300px; /* Adjust as needed */
+}
+
+.slider-image.medium {
+  height: 220px; /* Adjust as needed */
+}
+
+.button-submit {
+  background-color: #ff306a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 174px;
+  BORDER-RADIUS: 8px;
+  box-shadow: 0 0 30px rgba(201, 57, 57, 0.3);
+}
+
+.button-submit:hover {
+  background-color: #e73939;
+  box-shadow: 0 0 30px rgba(201, 57, 57, 0.3);
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+}
+
+.success-message {
+  color: green;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .booking-form {
+        MARGIN-TOP: 15px;
+        padding: 0px;
+        width: 97%;
+        margin: 3px;
+        MARGIN-TOP: 40PX;
+    }
+    .reserve {
+        width: 90%;
+        box-shadow: 0 0 30px rgba(201, 57, 57, 0.3);
+        left: 0%;
+    }
+    .benefit {
+       font-size: 26px;
+       margin-left: 30px;
+    }
+    .user-info h4 {
+       position: relative;
+       top: 3PX;
+       font-weight: normal;
+       font-size: medium;
+    }
+    .user-info {
+       WIDTH: 100%;
+       margin-bottom: 10px;
+       margin-top: 18px;
+    }
+    .ppicture {
+       width: 70px;
+       height: 70px;
+       left: 0%;
+    }
+    .user-info h1 {
+       font-size: 15px;
+    }
+}

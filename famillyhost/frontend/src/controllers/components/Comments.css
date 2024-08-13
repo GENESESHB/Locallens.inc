@@ -1,0 +1,242 @@
+/* Container for comments */
+.comments-container {
+  margin: 20px;
+}
+.comnts {
+  max-width: 365PX;
+}
+.comment-form, .edit-form-container {
+  margin-bottom: 20px;
+}
+
+.star-rating {
+  display: flex;
+  gap: 20px;
+}
+
+.star {
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+  color: #ccc; /* Default star color */
+}
+
+.star.filled,
+.star:hover,
+.star:hover ~ .star {
+  color: #FFD700; /* Gold color for selected and hovered stars */
+}
+
+.star.filled {
+  transform: scale(1.3); /* Grow selected stars */
+}
+
+.comment-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.comment-image {
+  max-width: 100px;
+  margin-right: 10px;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+}
+.comment-card p {
+	margin: 10px
+}
+.comment-card strong {
+	font-size: medium;
+}
+.submit-button, .cancel-button {
+  margin-top: 10px;
+}
+
+.cancel-button {
+  background-color: red;
+  color: white;
+}
+
+.comments-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: aliceblue;
+  border-radius: 8px;
+  text-align: center; /* Center text inside container */
+}
+
+.comment-form {
+    display: flex;
+    justify-content: center;
+    gap: 67px;
+    margin: 0 auto 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 83%;
+    text-align: left;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 1px solid #ff306a;
+}
+
+/* Form labels */
+.comment-form label {
+  font-weight: bold;
+  max-width: 100%;
+}
+.comments-container h2 {
+    margin: 5px;
+    width: fit-content;
+    border-bottom: 2px solid #ff306a;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+/* Form inputs and textarea */
+.comment-form input,
+.comment-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80%;
+}
+
+/* Form buttons */
+.comment-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px 0; /* Space between buttons */
+}
+
+/* Submit button */
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Cancel button */
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #da190b;
+}
+
+/* Comments list */
+.comments-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Individual comment card */
+.comment-card {
+  background-color: #ffffff;
+  border: 1px solid #ff306a;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Ensure card takes up appropriate width */
+  max-width: 320px; /* Limit maximum width of card */
+  text-align: center; /* Center text inside card */
+}
+
+/* Comment header */
+.comment-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Comment image */
+.comment-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Actions (edit, delete) */
+.comment-actions {
+  display: flex;
+  justify-content: center; /* Center actions inside container */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Edit button */
+.edit-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #2196F3;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #1976D2;
+}
+
+/* Delete button */
+.delete-button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #da190b;
+}
+
+/* Edit form container */
+.edit-form-container {
+  margin-top: 20px;
+  text-align: center; /* Center text inside edit form container */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .comments-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .comment-form {
+        width: 95%;
+        padding: 10px;
+        margin-left: -9px;
+  }
+
+  .comment-image {
+    max-width: 80px;
+  }
+}
+
+

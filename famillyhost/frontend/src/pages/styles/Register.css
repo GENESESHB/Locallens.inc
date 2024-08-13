@@ -43,14 +43,13 @@
 
 input[type="email"],
 input[type="password"],
-input[type="text"],
-button {
+input[type="text"] {
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
   font-size: 16px;
-  max-width: 360px;
+  width: 80%;
 }
 
 button {

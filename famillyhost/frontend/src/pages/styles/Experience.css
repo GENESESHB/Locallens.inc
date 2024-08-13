@@ -1,0 +1,107 @@
+.experience-page {
+  padding-top: 60px; /* To account for the fixed navigation bar */
+}
+
+.experience-navigation-wrapper {
+  position: fixed;
+  top: 43px;
+  width: 39%;
+  left: 16%;
+  right: 0;
+  z-index: 1000;
+  padding: 0PX;
+  HEIGHT: 46px;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-btn {
+  color: #493c3c;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  width: 30PX;
+  height: 30px;
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
+}
+.scroll-btn:hover {
+  font-size: 19px;
+  background: black;
+  width: 40px;
+  height: 30px;
+  box-shadow: none;
+}
+.scroll-btn.left {
+  margin-left: 10px;
+}
+
+.scroll-btn.right {
+  margin-right: 10px;
+}
+
+.experience-navigation {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex-grow: 1;
+  padding: 10px 0;
+}
+
+.experience-navigation::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for better aesthetics */
+}
+
+.experience-navigation button {
+  background-color: #a7a1a11a;
+  border: none;
+  width: fit-content;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #493c3c;
+  FONT-SIZE: 12px;
+  height: 32PX;
+  margin-right: 10px;
+  flex: none;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.experience-navigation button:hover,
+.experience-navigation button.active {
+  box-shadow: none;
+  color: white;
+  background: #ff306a;
+}
+
+.experience-content {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+   .experience-navigation-wrapper {
+       top: 27px;
+       width: 55%;
+       left: 43%;
+   }
+   .experience-navigation button {
+       FONT-SIZE: 8px;
+       margin-right: 0px;
+       height: 22px;
+   }
+   .scroll-btn {
+       font-size: 12px;
+   }
+   .scroll-btn:hover {
+     font-size: 14px;
+     background: black;
+     width: 30px;
+     height: 20px;
+     box-shadow: none;
+   } 
+}

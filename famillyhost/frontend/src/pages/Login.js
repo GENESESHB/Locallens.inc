@@ -12,7 +12,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const { login } = useAuth();
+  const { login, loggedIn } = useAuth();
 
   useEffect(() => {
     const query = new URLSearchParams(location.search);
@@ -21,6 +21,12 @@ const Login = () => {
       setMessage(decodeURIComponent(msg));
     }
   }, [location.search]);
+
+  useEffect(() => {
+    if (loggedIn) {
+      navigate('/Profilehost');
+    }
+  }, [loggedIn, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,10 +39,10 @@ const Login = () => {
       setLoading(false);
       console.log('Login successful:', response.data);
       setMessage('Login successful');
-      navigate('/Profilehost');
       const token = response.data.token;
       console.log('Received token:', token);
       await login(token);
+      navigate('/Profilehost');
     } catch (error) {
       setLoading(false);
       console.error('Login failed:', error);

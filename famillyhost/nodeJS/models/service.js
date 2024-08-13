@@ -1,10 +1,7 @@
-// service.js
-
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const serviceSchema = new Schema({
-  userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+const serviceSchema = new mongoose.Schema({
+  userId: { type: mongoose.Schema.Types.ObjectId, required: true },
   userName: { type: String, required: true },
   profilePicture: { type: String },
   stateName: { type: String },
@@ -14,11 +11,25 @@ const serviceSchema = new Schema({
   architectHomeName: { type: String },
   architectHomeImage: { type: String },
   eatName: { type: String },
-  eatImages: { type: [String] },
+  eatImages: [String],
   moroccanDecorationName: { type: String },
-  moroccanDecorationImages: { type: [String] },
+  moroccanDecorationImages: [String],
   clothingName: { type: String },
-  clothingImages: { type: [String] },
-}, { timestamps: true }); // Add this line
+  clothingImages: [String],
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now }
+});
 
-module.exports = mongoose.model('Service', serviceSchema);
+// Create a text index on relevant fields
+serviceSchema.index({
+  stateName: 'text',
+  cityName: 'text',
+  architectHomeName: 'text',
+  eatName: 'text',
+  moroccanDecorationName: 'text',
+  clothingName: 'text'
+});
+
+const Service = mongoose.model('Service', serviceSchema);
+
+module.exports = Service;

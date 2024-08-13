@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 80vh;
 }
 
 .login-card h1 {
@@ -40,12 +40,11 @@
 }
 
 input[type="email"],
-input[type="password"],
-button {
+input[type="password"] {
   width: 100%; /* Full width of parent container */
-  max-width: 360px; /* Max width constraint for inputs and buttons */
-  height: 32px; /* Set height for inputs and buttons */
-  WIDTH: 94%;
+  width: 80%; /* Max width constraint for inputs and buttons */
+  height: 18px; /* Set height for inputs and buttons */
+  WIDTH: 80%;
   margin-bottom: 15px; /* Increased space between elements */
   padding: 10px;
   border: 1px solid #ccc;
@@ -54,26 +53,22 @@ button {
 }
 
 button {
-  background-color: none;
+  background-color: WHITE;
   color: #ff306a;
   cursor: pointer;
   border: 1px solid #ff306a; /* Remove default border */
   height: 40px;
+  WIDTH: 60%;
+  border-radius: 22px;
+  padding: 8px;
+  MARGIN: 5px;
 }
 
 button:hover {
-  background-color: #ffffff;
-}
-
-.register-button {
-  
-  background-color: none;
-  color: #ff306a;
-  border: 1px solid #ff306a; /* Remove default border */
-}
-
-.register-button:hover {
-  background-color: #ffffff;
+  color: white; /* Change text color on hover */
+  transform: scale(1.01); /* Slightly increase size on hover */
+  box-shadow: 0 0 20px 8px rgba(201, 57, 57, 0.3);
+  background: #d73953;
 }
 
 .loader {
@@ -93,4 +88,9 @@ button:hover {
   100% {
     transform: rotate(360deg);
   }
+}
+@media (max-width: 768px) {
+    button {
+        width: 80%;
+    }
 }

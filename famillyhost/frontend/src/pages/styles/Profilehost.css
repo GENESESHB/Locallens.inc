@@ -8,32 +8,146 @@
   flex-wrap: wrap;
   gap: 16px; /* Space between service cards */
 }
-
-.service-card {
-  width: 100%;
-  max-width: 600px; /* Adjust width as needed */
-  padding: 16px;
-  background-color: #fff;
-  overflow: hidden;
+.reagir {
+   display: flex;
+   border-top: 1PX SOLID #CCC;
+}
+button.drop {
+    width: 30PX;
+    font-size: 30PX;
+    background: none;
+    border: none;
+}
+button.drop:hover {
+   border: none;
+   background: none;
+   box-shadow: none;
+   color: black;
+}
+.rg {
+    font-size: 30px;
+    margin-left: 20%;
+}
+.menr {
+    position: relative;
+    DIRECTION: rtl;
+    FONT-SIZE: 29PX;
+    MARGIN-BOTTOM: -57PX;
+    cursor: pointer;
+    COLOR: #ff306a;
+}
+.actionbtp {
+  border-radius: 0px;
+  width: 88%;
+  position: relative;
+  left: 3px;
+  COLOR: black;
+  MARGIN: 5px;
+  margin-bottom: 10px;
+  /* height: 36px; */
+  background: none;
+  padding: 0px;
+  border: none;
+  border-bottom: 1px SOLID #CCC;
+}
+.dropdown-ent {
+  display: none;
+  position: absolute;
+  direction: ltr;
+  background-color: #f9f9f9;
+  width: 165px;
+  border-radius: 22px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  flex-direction: column;
 }
 
+.dropdown-ent.show {
+  display: block; /* Show dropdown */
+}
+
+.sercard {
+    border-top: 1px solid #ccc;
+    margin-bottom: 56px;
+    max-width: 684px;
+    padding: 10px;
+    background: aliceblue;
+    border: 1px solid #ff306a;
+    border-radius: 22px;
+    box-shadow: 2px 2px 8px 0px rgb(0 0 0 / 36%);
+}
+.nameuser {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin-top: 10px;
+}
+.nameuser img {
+   border-radius: 50%;
+}
+.nameouner {
+  max-width: fit-content;
+  position: relative;
+  top: -46px;
+  left: 59px;
+}
+.nameouner h5 {
+    position: relative;
+    top: -13px;
+}
+.up {
+	font-size: 8px;
+        position: relative;
+        top: -40px;
+}
+.up h4 {
+    margin-top: -18px;
+}
+.sercard h3 {
+  background: #ff306a;
+  color: white;
+  padding: 17px;
+  max-width: fit-content;
+  position: relative;
+  MARGIN-TOP: -35PX;
+}
 .carousel-container {
   border-radius: 20px;
   width: 100%;
   height: 300px; /* Adjust height as needed */
   overflow: hidden; /* Hide overflowed content */
 }
+.slick-next {
+     right: 10px;
+     z-index: 1;
+     TOP: 50%;
+     FONT-SIZE: 30px;
+}
 .slick-prev {
-    left: 25px;
+    left: 10px;
     z-index: 1;
-    TOP: 157px;
+    TOP: 50%;
     FONT-SIZE: 30px;
 }
-.service-card p {
-  margin: 10px 0; /* Add some margin for better visibility */
-  color: #333; /* Ensure text color is visible */
+.slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 26px;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-
+.slick-prev:before:hover, .slick-next:before:hover {
+    font-family: 'slick';
+    font-size: 30px;
+    line-height: 1;
+    transform: none;
+    color: white;
+    box-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 .carousel-image {
   width: 100%;
   height: 100%;
@@ -53,25 +167,6 @@
 
 .slick-dots {
   bottom: 10px; /* Adjust the position of the dots if needed */
-}
-.slick-next {
-    font-size: 30PX;
-    line-height: 0;
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 20px;
-    height: 340px;
-    right: 12px;
-    left: 92%;
-    top: 157PX;
-    padding: 0;
-    transform: translate(0, -50%);
-    cursor: pointer;
-    color: transparent;
-    border: none;
-    outline: none;
-    background: transparent;
 }
 .profile-container {
   max-width: 800px;
@@ -95,24 +190,21 @@
   object-fit: cover;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
+.infosaver {
+   width: 100%;
+   MARGIN-TOP: 30px;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   HEIGHT: 592px;
 }
-
-form div {
-  margin-bottom: 15px;
-}
-
-form label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-form input {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
+.cancel-save {
+    position: absolute;
+    top: -34px;
+    width: fit-content;
+    right: 0px;
+    background: white;
+    color: darkblue;
 }
 
 .name h1 {
@@ -189,15 +281,17 @@ form input {
   font-size: 14px;
   border-radius: 9px;
   position: relative;
-  top: 6px;
+  top: 0px;
   height: 33PX;
 }
 .add-service:hover {
    box-shadow: #d31248;
    background-color: #d31248;
-   box-shadow: 2px 2px 228px 212px rgb(0 0 0 / 36%);
+   box-shadow: 0 0 20px 8px rgba(201, 57, 57, 0.3);
 }
-
+.add-service-container:hover {
+   box-shadow: 0 0 20px 8px rgba(201, 57, 57, 0.3);
+}
 /* Fixed form styling */
 .service-form {
   position: fixed;
@@ -227,7 +321,22 @@ form input {
 .containerform div {
   margin-bottom: 15px;
 }
-
+.infosaver div {
+  margin-bottom: 15px;
+}
+.infosaver label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.infosaver input[type="text"],
+.infosaver input[type="file"] {
+  width: calc(100% - 40px); /* Adjust width to accommodate icon */
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 .containerform label {
   display: flex;
   align-items: center;
@@ -284,9 +393,73 @@ form input {
 .cancel-button:hover {
   color: #ff306a; /* Change color on hover if desired */
 }
-
-.add-sr {
-   width: 100%;
+.editinfo {
+        border: 1px solid #d73953;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 39px;
+        background-color: white;
+        transition: all 0.3s ease;
+        margin-top: 0px;
+        max-width: revert-layer;
+        border-radius: 0px;
+        padding: 0px;
+        color: #493c3c;
+        font-size: 12px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 0 4px rgba(201, 57, 57, 0.3);
+        /* z-index: 11330; */
+        margin-bottom: 6px;
+}
+.saveinfo {
+        border: 1px solid #d73953;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 39px;
+        background-color: white;
+        transition: all 0.3s ease;
+        margin-top: 0px;
+        max-width: revert-layer;
+        border-radius: 0px;
+        padding: 0px;
+        color: #493c3c;
+        width: 200px;
+        font-size: 12px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 0 4px rgba(201, 57, 57, 0.3);
+        /* z-index: 11330; */
+        margin-bottom: 6px;
+}
+.editinfo:hover {
+  color: white; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0 0 20px 8px rgba(201, 57, 57, 0.3);
+  background: #d73953;
+}
+.cancel-save:hover {
+  color: white; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0 0 20px 8px rgba(201, 57, 57, 0.3);
+  background: #d73953;
+}
+.saveinfo:hover {
+  color: white; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0 0 20px 8px rgba(201, 57, 57, 0.3);
+  background: #d73953;
+}
+input[type="email"], input[type="password"] {
+    height: 42px;
+    WIDTH: 80%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    font-size: 16px;
 }
 
 @media (max-width: 767px) {
@@ -330,16 +503,30 @@ form input {
   }
 
   .editinfo {
-    font-size: 9px;
-    width: 83%;
-    border-radius: 4px;
-    height: 33px;
+        border: 1px solid #d73953;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 39px;
+        background-color: white;
+        transition: all 0.3s ease;
+        margin-top: 0px;
+        max-width: revert-layer;
+        border-radius: 0px;
+        padding: 0px;
+        color: #493c3c;
+        font-size: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 0 4px rgba(201, 57, 57, 0.3);
+        /* z-index: 11330; */
+        margin-bottom: 6px;
   }
 
   .add-service-container {
         width: 53%;
         padding: 10px;
-        height: 38px;
+        height: 20px;
         margin-top: 0px;
   }
 
@@ -353,10 +540,23 @@ form input {
   }
 
   .add-service {
-        font-size: 14px;
+        font-size: 9px;
         padding: 6px 12px;
         height: 29px;
         color: #ffffff;
         background-color: #ff306a;
+  }
+  .sercard h3 {
+        background: #ff306a;
+        color: white;
+        padding: 12px;
+        font-size: 12PX;
+        max-width: fit-content;
+  }
+  .carousel-container {
+     height: 193PX;
+  }
+  .slick-dots li {
+   width: 0px;
   }
 }

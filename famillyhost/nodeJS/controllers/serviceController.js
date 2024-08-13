@@ -15,6 +15,12 @@ exports.addService = async (req, res) => {
       userName // Access userName from req.body
     } = req.body;
 
+    // Check if a service already exists for the user
+    const existingService = await Service.findOne({ userId });
+    if (existingService) {
+      return res.status(400).json({ message: 'You can add only one service.' });
+    }
+
     // Handle multiple files for eatImages and clothingImages
     const stateImage = req.files['stateImage'] ? req.files['stateImage'][0].path : null;
     const cityImage = req.files['cityImage'] ? req.files['cityImage'][0].path : null;
@@ -49,14 +55,12 @@ exports.addService = async (req, res) => {
   }
 };
 
+// Get services by userId
 exports.getServicesByUserId = async (req, res) => {
-  const { userId } = req.params; // Correctly extract userId from req.params
-  console.log('user_id', userId);
-  console.log(`Received request to fetch services for userId: ${userId}`); // Log received userId
+  const { userId } = req.params;
 
   try {
     const services = await Service.find({ userId });
-    console.log('Fetched services:', services); // Log fetched services
 
     res.status(200).json(services);
   } catch (error) {
@@ -64,4 +68,3 @@ exports.getServicesByUserId = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
-

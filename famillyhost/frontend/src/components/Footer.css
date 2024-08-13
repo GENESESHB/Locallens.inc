@@ -1,0 +1,115 @@
+/* Footer
+   ============================= */
+.containerf {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+a.footer-nav-link:hover {
+    background: #d73953;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 13PX;
+}
+.social-link>svg:hover {
+    font-size: 20PX;
+    color: #d73953;
+    text-decoration: none;
+
+}
+.footer {
+  padding: var(--footer-padding);
+  background: #090909;
+  text-align: center;
+}
+
+.footer-copyright {
+  padding: 10px;
+  color: white;
+}
+a.footer-nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 12PX;
+}
+.row1 {
+    display: inline-flex;
+    width: 100%;
+    gap: 30%;
+}
+.row2 {
+    display: inline-flex;
+    width: 100%;
+    gap: 10%;
+}
+.col-1-2 {
+    width: calc((100% / 2) - 2rem);
+}
+.footer ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-address {
+  color: white;
+  margin-top: 1rem;
+}
+
+.social-link {
+  display: inline-block;
+  margin: 0 0.5rem; /* Space between icons */
+}
+
+.social-link>svg {
+  fill: white; /* Ensures icons are white */
+  width: 2rem; /* Icon size */
+  height: 2rem; /* Icon size */
+  color: white;
+}
+
+.line-divider {
+  height: 1px; /* Height of the line */
+  background-color: #fff; /* Color of the line */
+  margin: 20px 0; /* Spacing above and below the line */
+}
+
+.imf {
+    width: 130px; /* Adjust logo size as needed */
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    padding: 3rem 1rem 1rem; /* Adjust padding for small screens */
+  }
+  .col-1-2 {
+     width: 100%
+  }
+  .footer ul {
+    gap: 0.5rem; /* Reduce gap between items */
+  }
+
+  .social-link>svg {
+    width: 1.5rem; /* Reduce icon size on small screens */
+    height: 1.5rem; /* Reduce icon size on small screens */
+  }
+  .row1 {
+
+    flex-wrap: wrap;
+   }
+  .row2 {
+    flex-wrap: wrap;
+   }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 5rem 2rem 1rem; /* Padding for larger screens */
+  }
+  .col-1-2 {
+     width: 100%
+  }
+}

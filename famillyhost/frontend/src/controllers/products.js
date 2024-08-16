@@ -59,22 +59,6 @@ function ServiceDetails() {
   return (
     <main className='service-details'>
       < Bookbot/>
-      <section className="service-se">
-        <h1 className="highlight">
-             <div className='pubanon'>
-                  <FontAwesomeIcon icon={faBullhorn} className="highlighticon"/>
-             </div>
-             <div className='lyriceanon'>
-              live with our partner in {service.cityName} in provincial {service.stateName} ,
-              and explore culture {service.architectHomeName} and {service.moroccanDecorationName} ,
-              enjoy cuisine morocain {service.eatName} ,
-              enjoy and live like a local
-             </div>
-        </h1>
-        <ColorExtractor getColors={(colors) => handleColorChange('state', colors)}>
-          <img src={`http://localhost:5000/${service.stateImage}`} alt="State" className="image-large" style={{ boxShadow: boxShadowColors['state'] ? `0 4px 8px ${boxShadowColors['state']}` : 'none' }} />
-        </ColorExtractor>
-      </section>
       <section className="service-section">
         <div className="grand-icons">
           <div className="icon-item">

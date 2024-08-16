@@ -1,8 +1,10 @@
 .booking-form {
-  padding: 90px;
-  max-width: 1200px;
+  padding: 20px;
+  position: relative;
+  border-radius: 43px;
+  width: 80%;
   margin: 0 auto;
-  BACKGROUND: aliceblue;
+  BACKGROUND: #e8e5e552;
 }
 .benefit {
     margin: 15px;
@@ -64,32 +66,27 @@ input[type="tel"] {
 .bookh3:hover .fa-chevron-left {
   color: #ff306a; 
 }
-.ppicture {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    top: -62px;
-    left: -12%;
-    margin-right: 20PX;
-    border-radius: 50%;
-    object-fit: cover;
-    Z-INDEX: 2;
-    box-shadow: 2px 2px 8px 0px rgb(0 0 0 / 36%);
+.handelsheck {
+  border: 1PX SOLID #CCC;
+  border-radius: 50%;
+  font-size: 10px;
+  width: 70px;
+  padding: 5px;
+  HEIGHT: 70px;
+  background-color: #fffafa;
+  color: rgb(143, 139, 139);
 }
-.user-info h1 {
-    width: 367px;
-    padding: 10px;
-    BACKGROUND: white;
-    border: 1px solid #ff306a;
-    margin-top: -120px;
-    height: 61px;
-    position: relative;
-    COLOR: #493c3c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    BORDER-RADIUS: 22PX 22px 0 0;
+.ppicture {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  /* top: -62px; */
+  /* left: -12%; */
+  /* margin-right: 20PX; */
+  border-radius: 50%;
+  object-fit: cover;
+  Z-INDEX: 2;
+  /* box-shadow: 2px 2px 8px 0px rgb(0 0 0 / 36%); */
 }
 .user-info {
   display: flex;
@@ -97,32 +94,35 @@ input[type="tel"] {
   margin-bottom: 30px;
   max-width: 360PX;
   BACKGROUND: white;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding: 0px;
-  border: 1px solid #ff306a;
-  border-radius: 22px;
-  box-shadow: 2px 2px 8px 0px rgb(0 0 0 / 36%);
+  /* border: 1px solid #ff306a; */
+  border-radius: 53px;
+  /* box-shadow: 2px 2px 8px 0px rgb(0 0 0 / 36%); */
+  flex-direction: column;
 }
 .user-info h4 {
   position: relative;
   background: none;
   line-height: 1.5;
-  top: 3PX;
-  border-bottom: 1px solid #ff306a;
+  /* top: 3PX; */
+  /* border-bottom: 1px solid #ff306a; */
   margin-top: 0px;
   padding: 10px;
   width: -webkit-fill-available;
-  font-size: medium;
-  font-weight: 400;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  COLOR:  #121010;
+  font-size: small;
+  font-weight: 100;
+  /* font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+  COLOR: #121010;
 }
 .image-slider {
   position: relative;
 }
 .userwelc {
-    display: flex;
-    flex-wrap: wrap;
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .slider-item {
@@ -178,11 +178,11 @@ input[type="tel"] {
 
 @media (max-width: 768px) {
     .booking-form {
-        MARGIN-TOP: 15px;
         padding: 0px;
+        border-radius: 43PX;
         width: 97%;
         margin: 3px;
-        MARGIN-TOP: 40PX;
+        MARGIN-TOP: -2PX;
     }
     .reserve {
         width: 90%;
@@ -200,9 +200,9 @@ input[type="tel"] {
        font-size: medium;
     }
     .user-info {
-       WIDTH: 100%;
+       WIDTH: 98%;
        margin-bottom: 10px;
-       margin-top: 18px;
+       margin-top: 25px;
     }
     .ppicture {
        width: 70px;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faScaleBalanced, faArrowRightToBracket, faArrowDownWideShort, faInfoCircle, faLock, faUser, faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
+import { faScaleBalanced, faRightFromBracket, faArrowRightToBracket, faArrowDownWideShort, faInfoCircle, faLock, faUser, faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
 import logo from '../assets/lg.png';
 

@@ -8,6 +8,13 @@
   flex-wrap: wrap;
   gap: 16px; /* Space between service cards */
 }
+.error-text {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 5px;
+  display: block;
+}
+
 .reagir {
    display: flex;
    border-top: 1PX SOLID #CCC;
@@ -49,6 +56,9 @@ button.drop:hover {
   padding: 0px;
   border: none;
   border-bottom: 1px SOLID #CCC;
+}
+.actionbtp:hover {
+  box-shadow: none;
 }
 .dropdown-ent {
   display: none;

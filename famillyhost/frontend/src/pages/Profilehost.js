@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { useAuth } from '../contexts/AuthContext';
 import UserInfoForm from './components/UserInfoForm';
 import ServiceForm from './components/ServiceForm';
@@ -14,27 +13,7 @@ const Profilehost = () => {
   const { user, token, updateUser } = useAuth();
   const [editMode, setEditMode] = useState(false);
   const [serviceMode, setServiceMode] = useState(false);
-  const [services, setServices] = useState([]);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (user) {
-      fetchServices();
-    }
-  }, [user, token]);
-
-  const fetchServices = async () => {
-    try {
-      const response = await axios.get(`http://localhost:5000/api/user/services/${user._id}`, {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
-      setServices(response.data);
-    } catch (error) {
-      console.error('Error fetching services:', error.response ? error.response.data : error.message);
-    }
-  };
 
   const handleNavigate = (serviceId) => {
     navigate(`/product/${serviceId}`);
@@ -47,9 +26,8 @@ const Profilehost = () => {
       <div className="name">
         <h1>{user.fullName}</h1>
       </div>
-      
       {editMode ? (
-        <UserInfoForm 
+        <UserInfoForm
           user={user}
           token={token}
           updateUser={updateUser}
@@ -78,11 +56,10 @@ const Profilehost = () => {
           token={token}
           user={user}
           setServiceMode={setServiceMode}
-          fetchServices={fetchServices}
         />
       )}
 
-      <ServiceSlider services={services} handleNavigate={handleNavigate} />
+      <ServiceSlider />
 
       <Footer />
     </div>

@@ -25,7 +25,7 @@ const UserInfoForm = ({ user, token, updateUser, setEditMode }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formDataToSend = new FormData();
-    
+
     Object.keys(formData).forEach(key => {
       if (formData[key]) {
         formDataToSend.append(key, formData[key]);
@@ -47,6 +47,7 @@ const UserInfoForm = ({ user, token, updateUser, setEditMode }) => {
   };
 
   return (
+   <div className='service-form'>
     <form onSubmit={handleSubmit} className="infosaver">
       <div>
         <label>Full Name:</label>
@@ -77,6 +78,7 @@ const UserInfoForm = ({ user, token, updateUser, setEditMode }) => {
         <FontAwesomeIcon icon={faTimes} />
       </button>
     </form>
+   </div>
   );
 };
 

@@ -4,7 +4,7 @@ import Footer from '../../components/Footer';
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick';
 import './BookingForm.css'; // Ensure the correct path to your CSS file
-import { faArrowDown, faCircleCheck, faAward, faHandHoldingHeart, faClipboardList } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faCircleCheck, faHandshake } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Slider settings to show 3 images at a time
@@ -156,23 +156,15 @@ function BookingForm() {
             alt="User Profile"
             className="ppicture"
           />
-          <h1><FontAwesomeIcon icon={faClipboardList} className='benefit' /> Benefit Information </h1>
           <h4><FontAwesomeIcon icon={faCircleCheck} className='ftdon' /> Stay with {user.fullName} in a local home.</h4>
           <h4><FontAwesomeIcon icon={faCircleCheck} className='ftdon1' /> Savor Moroccan cuisine in {user.city}.</h4>
           <h4><FontAwesomeIcon icon={faCircleCheck} className='ftdon' /> Wear traditional {service.clothingName} attire.</h4>
           <h4><FontAwesomeIcon icon={faCircleCheck} className='ftdon1' /> Celebrate local traditions in {service.stateName}.</h4>
 	 </div>
-           <h1 className="highlight">
-             <div className='pubanon'>
-                  <FontAwesomeIcon icon={faAward} className="highlighticon"/>
-             </div>
-             <div className='lyriceanon'>
-                We guarantee a secure and enriching experience by ensuring you stay with a local family. 
-                Our commitment includes 24/7 communication support, providing assistance and ensuring your
-                comfort throughout your stay. Enjoy authentic local living with the assurance of our dedicated
-                service and continuous support.
-             </div>
-           </h1>
+   <div className='user-info'>
+          <FontAwesomeIcon icon={faHandshake} className='handelsheck'/>
+          <h4>living with full security and we support you 24:24 and we garantie to you to do buttervvin </h4>
+	 </div>
         </section>
       )}
 

@@ -1,22 +1,25 @@
 .header-booking {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    background-color: aliceblue;
-    transition: all 0.3s ease;
-    margin-top: 0px;
-    font-family: monospace;
-    max-width: max-content;
-    border-radius: 22px;
-    padding: 10px;
-    color: #ff306a;
-    font-size: 20PX;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 2px 6px 20px 10px rgba(201, 57, 57, 0.3);
-    z-index: 11330;
-    margin-bottom: 6px;
+  display: flex;
+  border: 1px solid #d73953;
+  height: auto;
+  position: fixed;
+  left: 30PX;
+  TOP: 133px;
+  background-color: #ff306a;
+  transition: all 0.3s ease;
+  margin-top: 0px;
+  font-family: monospace;
+  max-width: max-content;
+  border-radius: 22px;
+  padding: 10px;
+  color: white;
+  font-weight: bolder;
+  font-size: 20PX;
+  margin-left: auto;
+  margin-right: auto;
+  /* box-shadow: 2px 6px 20px 10px rgba(201, 57, 57, 0.3); */
+  z-index: 11330;
+  margin-bottom: 6px;
 }
 .header-booking.scrolled:hover {
   color: white; /* Change text color on hover */
@@ -34,7 +37,7 @@
 }
 .header-booking.scrolled {
     position: fixed;
-    background-color: aliceblue;
+    background-color: #ff306a;
     margin: 5px;
     left: 38%;
     TOP: 44PX;
@@ -48,22 +51,23 @@
 /* Mobile styles */
 @media (max-width: 768px) {
   .header-booking {
-    max-width: 50%;
+    width: 50%;
     font-size: 14PX;
     margin-top: 10px;
-    padding: 0px;
+    padding: 8px;
     margin-bottom: -42px;
-    height: 40px; 
-  }
+    height: 21px;
+}
 
   .header-booking.scrolled {
-        height: 18px;
-        margin-top: -10PX;
-        left: 79%;
-        BOX-SHADOW: NONE;
-        border: none;
-        width: max-content;
-	padding: 8px;
-	TOP: 42px;
+    height: 19px;
+    margin-top: -6PX;
+    left: 79%;
+    BOX-SHADOW: NONE;
+    border: none;
+    width: max-content;
+    padding: 8px;
+    padding-top: 4px;
+    TOP: 42px;
   }
 }

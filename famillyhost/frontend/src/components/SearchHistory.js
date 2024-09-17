@@ -1,5 +1,7 @@
 import './SearchHistory.css';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClockRotateLeft } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
 function SearchHistory({ searchHistory, onHistoryClick }) {
@@ -8,9 +10,10 @@ function SearchHistory({ searchHistory, onHistoryClick }) {
       {searchHistory.length > 0 && (
         <ul>
           {searchHistory.map((item, index) => (
-            <li key={index} onClick={() => onHistoryClick(item)}>
-              {item}
-            </li>
+               <li key={index} onClick={() => onHistoryClick(item)}>
+               <FontAwesomeIcon icon={faClockRotateLeft} className='icohisto'/>
+                  {item}
+               </li>
           ))}
         </ul>
       )}

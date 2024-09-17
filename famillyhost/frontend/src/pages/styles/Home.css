@@ -55,7 +55,6 @@ p {
   object-fit: cover; /* Ensure the image covers the container without distortion */
   border-bottom: 1px solid #ddd;
 }
-
 .service-content {
   padding: 16px;
 }

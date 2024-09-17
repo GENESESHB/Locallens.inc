@@ -9,6 +9,7 @@ import { faSquareShareNodes, faRankingStar, faComments, faHeart, faPen, faEllips
 import avatar from '../../assets/1.png';
 import cover from '../../assets/coveruser.png';
 import axios from 'axios';
+import Marketing from './Marketing';
 
 const ServiceSlider = () => {
   const { user, token } = useAuth();
@@ -73,6 +74,10 @@ const ServiceSlider = () => {
     setIsOpen(false);
   };
 
+  const handleMarketingClick = () => {
+    navigate('/marketing');
+  };
+
   return (
     <div className="sersection">
       {services.map((service, index) => (
@@ -82,7 +87,7 @@ const ServiceSlider = () => {
               <FontAwesomeIcon icon={faEllipsis} />
             </button>
             <div className={`dropdown-ent ${isOpen ? 'show' : ''}`}>
-              <button className='actionbtp' onClick={() => handleLinkClick('delete')}>
+              <button className='actionbtp' onClick={handleMarketingClick}>
                   <FontAwesomeIcon  icon={faRankingStar} />  merketing
               </button>
               <button className="actionbtp" onClick={() => handleLinkClick('edit')}>

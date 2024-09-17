@@ -1,0 +1,62 @@
+.marketing-page {
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  BACKGROUND: #edeced85;
+  padding: 20px;
+  border-radius: 35px;
+  max-width: 800px;
+}
+.marketing-page h1 {
+   margin-right: 60px;
+}
+.supma {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.step-one, .step-two {
+  margin-bottom: 20px;
+}
+.step-one p {
+  color: BLACK;
+}
+
+.step-one h2 {
+  color: #ff306a;
+  margin-bottom: 10px;
+}
+
+.step-one ul {
+  color:  #825964;
+  margin-bottom: 20px;
+}
+.next-button {
+    position: relative;
+    /* display: flex; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    direction: initial;
+    width: 100px;
+    left: 80%;
+    BACKGROUND: cornsilk;
+    BORDER: 2px solid white;
+    border-radius: 8px;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+@media (max-width: 768px) {
+    .marketing-page {
+       display: flex;
+       flex-direction: column;
+    }
+    .next-button {
+       left: 10%;
+    }
+}

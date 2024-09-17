@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import SearchBar from './components/searchbar';
+//import SearchBar from './components/searchbar';
 import Home from './pages/Home';
 import Profilehost from './pages/Profilehost';
 import About from './pages/About';
@@ -17,6 +17,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import BookingForm from './controllers/components/BookingForm';
 import PrivateRoute from './routes/privatRoutes';
 import './App.css';
+import Marketing from './pages/components/Marketing';
 
 const App = () => {
   return (
@@ -40,6 +41,14 @@ const App = () => {
                 element={
                   <PrivateRoute>
                     <Profilehost />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/marketing"
+                element={
+                  <PrivateRoute>
+                    <Marketing />
                   </PrivateRoute>
                 }
               />

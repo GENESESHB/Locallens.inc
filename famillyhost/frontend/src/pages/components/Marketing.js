@@ -1,121 +1,111 @@
 import React, { useState } from 'react';
+import axios from 'axios'; // Ensure axios is imported
+import Footer from '../../components/Footer';
+import { useAuth } from '../../contexts/AuthContext'; // Adjust the import path based on your project structure
 import '../styles/Marketing.css'; // Ensure you have the correct path to your CSS file
 
 const Marketing = () => {
-  const [step, setStep] = useState(1);
-  const [videoUrl, setVideoUrl] = useState('');
-  const [reelUrl, setReelUrl] = useState('');
-  const [galleryImages, setGalleryImages] = useState([]);
-  const [location, setLocation] = useState('');
+  const [reelFile, setReelFile] = useState(null);
+  const [reelType, setReelType] = useState('');
+  const { user } = useAuth(); // Use the useAuth hook to get the current user
 
-  const handleNextStep = () => {
-    setStep(step + 1);
+  const handleReelFileChange = (e) => {
+    setReelFile(e.target.files[0]);
   };
 
-  const handlePreviousStep = () => {
-    setStep(step - 1);
+  const handleReelTypeChange = (e) => {
+    setReelType(e.target.value);
   };
 
-  const handleVideoChange = (e) => {
-    setVideoUrl(e.target.value);
-  };
-
-  const handleReelChange = (e) => {
-    setReelUrl(e.target.value);
-  };
-
-  const handleGalleryChange = (e) => {
-    setGalleryImages([...e.target.files]);
-  };
-
-  const handleLocationChange = (e) => {
-    setLocation(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission to upload content to the backend
+    const formData = new FormData();
+    formData.append('reelFile', reelFile);
+    formData.append('reelType', reelType);
+    formData.append('user', user._id); // Append the user ID here
+
+    // Log the current user information to the console
+    console.log('Current User:', user); // Log user info to verify it's correct
+
+    // Include current user information in the submission
+    const submissionData = {
+      user, // Current user from AuthContext
+      reelType,
+    };
+
+    // Log submission data to console
+    console.log('Submission Data:', submissionData);
+
+    try {
+      // Handle form submission for uploading the reel file
+      const response = await axios.post('http://localhost:5000/api/upload-reel', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+      console.log('Upload Response:', response.data);
+    } catch (error) {
+      console.error('Error uploading reel:', error);
+    }
   };
 
   return (
-  <div className='vinvo'>
-   <div className='supma'>
-    <div className="marketing-page">
-      <h1>Marketing Your Products</h1>
+    <div className="marketing-container">
+      {/* Explanation Card */}
+      <div className="card">
+        <h2>Why Should You Upload Reels?</h2>
+        <p>
+          Uploading reels is essential for increasing your visibility to tourists. It allows them to find your services easily and see what you offer. By adding music to your reels and clearly explaining your activities, you can grab attention and get more visitors.
+        </p>
+        <p>
+          Remember, a short reel (max 30 seconds) can highlight your services more effectively. Keep your content engaging and relevant!
+        </p>
+      </div>
 
-      {step === 1 && (
-        <div className="step-one">
-          <h2>Why Choose Our Marketing Services?</h2>
-          <p>Boost your visibility by adding videos, reels, and a gallery of images showcasing your services. Choose the location that best represents your experiences, whether it's the Atlas Mountains, the Sahara Desert, or the coast.</p>
-          <ul>
-            <li>Upload engaging videos to attract clients.</li>
-            <li>Showcase your experiences with reels.</li>
-            <li>Create a beautiful gallery of images from your tours.</li>
-            <li>Specify the location to help clients know what to expect.</li>
-          </ul>
-          <button className="next-button" onClick={handleNextStep}>
-            Next
-          </button>
-        </div>
-      )}
+      {/* Reel Requirements Card */}
+      <div className="card">
+        <h2>Reel Requirements</h2>
+        <ul>
+          <li>Format: MP4</li>
+          <li>Maximum size: 100MB</li>
+          <li>Recommended length: 30 seconds or less</li>
+          <li>Make sure to add music and explain your activity clearly</li>
+        </ul>
+      </div>
 
-      {step === 2 && (
-        <div className="step-two">
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="video-url">Video URL:</label>
-              <input
-                type="text"
-                id="video-url"
-                value={videoUrl}
-                onChange={handleVideoChange}
-                placeholder="Enter video URL"
-              />
-            </div>
+      {/* Reel Upload Form */}
+      <div className="marketing-page">
+        <h1>Upload Your Reels</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="reel-file">Upload Reel:</label>
+            <input
+              type="file"
+              id="reel-file"
+              onChange={handleReelFileChange}
+              accept="video/mp4,video/x-m4v,video/"
+            />
+            <small>Accepted formats: MP4, Maximum size: 100MB</small>
+          </div>
 
-            <div className="form-group">
-              <label htmlFor="reel-url">Reel URL:</label>
-              <input
-                type="text"
-                id="reel-url"
-                value={reelUrl}
-                onChange={handleReelChange}
-                placeholder="Enter reel URL"
-              />
-            </div>
+          <div className="form-group">
+            <label htmlFor="reel-type">Choose Reel Type:</label>
+            <select id="reel-type" value={reelType} onChange={handleReelTypeChange}>
+              <option value="">Select type</option>
+              <option value="Sahara">Sahara</option>
+              <option value="tamazight">Tamazight</option>
+              <option value="Celebration">Celebration</option>
+              <option value="Atlas">Atlas Activities</option>
+              <option value="Beach">Beach and Swimming</option>
+              <option value="Traditional">Traditional Clothing</option>
+            </select>
+          </div>
 
-            <div className="form-group">
-              <label htmlFor="gallery-images">Gallery Images:</label>
-              <input
-                type="file"
-                id="gallery-images"
-                multiple
-                onChange={handleGalleryChange}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="location">Select Location:</label>
-              <select id="location" value={location} onChange={handleLocationChange}>
-                <option value="">Select a location</option>
-                <option value="Atlas">Atlas Mountains</option>
-                <option value="Sahara">Sahara Desert</option>
-                <option value="Coast">Coast</option>
-              </select>
-            </div>
-
-            <div className="form-navigation">
-              <button type="button" onClick={handlePreviousStep}>
-                Previous
-              </button>
-              <button type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
-      )}
+          <div className="form-navigation">
+            <button type="submit">Submit Reel</button>
+          </div>
+        </form>
+      </div>
+      <Footer />
     </div>
-   </div>
-  </div>
   );
 };
 

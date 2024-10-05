@@ -1,7 +1,5 @@
 import React, { useState, useRef } from 'react';
-import VideoView from '../components/view/VideoView';
 import ReelsView from '../components/view/ReelsView';
-import GalleryImagePost from '../components/view/GalleryImagePost';
 import SaharaView from '../components/view/SaharaView'; // Import your Sahara component
 import TamazightView from '../components/view/TamazightView'; // Import your Tamazight component
 import CelebrationView from '../components/view/CelebrationView'; // Import your Celebration component
@@ -13,17 +11,13 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import './styles/Experience.css';
 
 const Experience = () => {
-  const [view, setView] = useState('gallery');
+  const [view, setView] = useState('reels');
   const navigationRef = useRef(null);
 
   const renderView = () => {
     switch (view) {
-      case 'video':
-        return <VideoView />;
       case 'reels':
         return <ReelsView />;
-      case 'gallery':
-        return <GalleryImagePost />;
       case 'sahara':
         return <SaharaView />;
       case 'tamazight':
@@ -62,14 +56,8 @@ const Experience = () => {
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         <div className="experience-navigation" ref={navigationRef}>
-          <button onClick={() => setView('video')} className={view === 'video' ? 'active' : ''}>
-            Videos
-          </button>
           <button onClick={() => setView('reels')} className={view === 'reels' ? 'active' : ''}>
             Reels
-          </button>
-          <button onClick={() => setView('gallery')} className={view === 'gallery' ? 'active' : ''}>
-            Gallery
           </button>
           <button onClick={() => setView('sahara')} className={view === 'sahara' ? 'active' : ''}>
             Sahara

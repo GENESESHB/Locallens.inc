@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
 }
 .register-card h1 {
   font-size: 18px;
@@ -25,6 +24,8 @@
   width: 100%; /* Full width of parent container */
   max-width: 400px; /* Max width constraint */
   padding: 20px;
+  margin-bottom: 30px;
+  margin-top: 40px;
   border: 1px solid #ff306a;
   border-radius: 24px;
   background-color: #fff;

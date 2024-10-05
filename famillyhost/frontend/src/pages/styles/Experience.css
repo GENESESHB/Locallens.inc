@@ -1,5 +1,5 @@
 .experience-page {
-  padding-top: 60px; /* To account for the fixed navigation bar */
+  padding-top: 0px; /* To account for the fixed navigation bar */
 }
 
 .experience-navigation-wrapper {
@@ -78,10 +78,11 @@
 }
 
 .experience-content {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
 }
 @media (max-width: 768px) {
    .experience-navigation-wrapper {

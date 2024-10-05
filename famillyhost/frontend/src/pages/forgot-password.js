@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './styles/Register.css';
-import logo from '../assets/lg.png';
+//import logo from '../assets/lg.png';
+import Footer from '../components/Footer';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -19,21 +20,24 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="register-container">
-     <div className="register-card">
-       <h1> plaise set your email</h1>
-      <form onSubmit={handleResetRequest}>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <button type="submit">Reset Password</button>
-      </form>
-      {message && <p>{message}</p>}
-     </div>
+    <div>
+      <div className="register-container">
+       <div className="register-card">
+         <h1> plaise set your email</h1>
+           <form onSubmit={handleResetRequest}>
+            <input
+             type="email"
+             placeholder="Enter your email"
+             value={email}
+             onChange={(e) => setEmail(e.target.value)}
+             required
+            />
+            <button type="submit">Reset Password</button>
+           </form>
+           {message && <p>{message}</p>}
+       </div>
+      </div>
+      <Footer/>
     </div>
   );
 };

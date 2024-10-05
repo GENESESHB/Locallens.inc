@@ -3,7 +3,8 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext'; // Ensure this path is correct
 import './styles/Login.css';
-import logo from '../assets/lg.png';
+//import logo from '../assets/lg.png';
+import Footer from '../components/Footer';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -55,6 +56,7 @@ const Login = () => {
   };
 
   return (
+  <div>
     <div className="login-container">
       <div className="login-card">
         <h1>Welcome</h1>
@@ -85,6 +87,8 @@ const Login = () => {
         </button>
       </div>
     </div>
+    <Footer/>
+  </div>
   );
 };
 

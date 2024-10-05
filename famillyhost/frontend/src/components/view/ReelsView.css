@@ -1,0 +1,76 @@
+.reels-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Make the container responsive */
+    max-width: 400px; /* Set a maximum width for mobile viewing */
+    padding: 30px;
+    border-radius: 24px; /* Adjust border radius for a softer look */
+    background-color: rgba(237, 236, 237, 0.85);
+    flex-direction: column;
+}
+
+.reel-item {
+    width: 80%; /* Ensure the reel item takes full width of its container */
+    position: relative; /* Position relative for the inner elements */
+    overflow: hidden; /* Prevent overflow */
+    DISPLAY: flex;
+    JUSTIFY-CONTENT: center;
+    FLEX-FLOW: WRAP;
+}
+.reel-player {
+    width: 80%; /* Make the video responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 24px; /* Optional: add rounded corners */
+}
+
+.reel-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Space between video and user info */
+    position: absolute;
+}
+
+.profile-picturereels {
+    width: 40px; /* Set width for the profile picture */
+    height: 40px; /* Set height for the profile picture */
+    border-radius: 50%; /* Make it circular */
+    margin-right: 0px; /* Space between picture and name */
+}
+
+.user-namereels {
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: make the name bold */
+    left: 0px;
+}
+
+.navigation-buttons {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    width: 100%; /* Full width of the parent */
+    max-width: 259px; /* Limit the width of the navigation buttons */
+    margin-top: 10px; /* Space above buttons */
+    left: 50%; /* Center the navigation buttons */
+    transform: translateX(-50%); /* Centering transform */
+}
+
+.nav-button {
+    background-color: #ff306a; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Make buttons circular */
+    width: 40px; /* Set a width for the circular button */
+    height: 40px; /* Set a height for the circular button */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    margin: 0 -55px; /* Space between buttons */
+}
+
+.nav-button:hover {
+    background-color: #e02d61; /* Darker shade on hover */
+}
+

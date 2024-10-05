@@ -9,6 +9,8 @@ const Booking = require('./models/booking');
 const User = require('./models/User');
 const SearchLog = require('./models/SearchLog');
 const commentRoutes = require('./routes/commentRoutes');
+const reelRoutes = require('./routes/reelRoutes');
+
 
 require('dotenv').config();
 
@@ -23,6 +25,7 @@ app.use(cors({
 
 app.use('/uploads', express.static('uploads'));
 app.use('/uploadscoment', express.static('uploadscoment'));
+app.use('/api', reelRoutes);
 
 app.get('/api/services', async (req, res) => {
   try {
@@ -180,8 +183,9 @@ app.use('/api', commentRoutes);
 
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   })
   .catch(error => console.error('Database connection error:', error));
+

@@ -20,6 +20,7 @@ const Profilehost = () => {
   };
 
   return (
+  <div>
     <div className="profile-container">
       <img src={user.coverPhoto ? `http://localhost:5000/${user.coverPhoto}` : cover} alt="Cover" className="cover-photo" />
       <img src={user.profilePicture ? `http://localhost:5000/${user.profilePicture}` : avatar} alt="Profile" className="profile-picture" />
@@ -60,9 +61,9 @@ const Profilehost = () => {
       )}
 
       <ServiceSlider />
-
-      <Footer />
     </div>
+   <Footer />
+  </div>
   );
 };
 

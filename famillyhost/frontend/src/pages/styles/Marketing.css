@@ -1,62 +1,120 @@
+.marketing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color:  rgba(237, 236, 237, 0.85);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border-radius: 35px;
+  padding: 20px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.card h2 {
+  color: #ff306a;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.card p, .card ul {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.card ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
 .marketing-page {
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-  display: flex;
-  BACKGROUND: #edeced85;
-  padding: 20px;
+  background-color: rgba(237, 236, 237, 0.85); /* Soft, transparent background */
   border-radius: 35px;
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .marketing-page h1 {
-   margin-right: 60px;
-}
-.supma {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.step-one, .step-two {
+  font-size: 2rem;
+  color: #333;
   margin-bottom: 20px;
-}
-.step-one p {
-  color: BLACK;
+  text-align: center;
 }
 
-.step-one h2 {
-  color: #ff306a;
-  margin-bottom: 10px;
-}
-
-.step-one ul {
-  color:  #825964;
-  margin-bottom: 20px;
-}
-.next-button {
-    position: relative;
-    /* display: flex; */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-    direction: initial;
-    width: 100px;
-    left: 80%;
-    BACKGROUND: cornsilk;
-    BORDER: 2px solid white;
-    border-radius: 8px;
-}
 .form-group {
   margin-bottom: 15px;
+  width: 100%;
 }
 
 label {
   display: block;
   margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
 }
+
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+small {
+  color: #666;
+  display: block;
+  margin-top: 5px;
+}
+
+.form-navigation {
+  text-align: right;
+}
+
+button[type="submit"] {
+  background-color: #ff306a;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff6096;
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
-    .marketing-page {
-       display: flex;
-       flex-direction: column;
-    }
-    .next-button {
-       left: 10%;
-    }
+  .marketing-container {
+    padding: 10px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .marketing-page {
+    width: 90%;
+  }
 }

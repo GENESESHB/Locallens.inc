@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 import './styles/Register.css';
 
 const Register = () => {
@@ -46,6 +47,7 @@ const Register = () => {
   };
 
   return (
+  <div>
     <div className="register-container">
       <div className="register-card">
         <h1>Create Your Account</h1>
@@ -104,6 +106,8 @@ const Register = () => {
         )}
       </div>
     </div>
+   <Footer />
+  </div>
   );
 };
 

@@ -19,7 +19,7 @@ a.footer-nav-link:hover {
 
 }
 .footer {
-  width: 100%;
+  width: 95%;
   padding: var(--footer-padding);
   background: #090909;
   text-align: center;

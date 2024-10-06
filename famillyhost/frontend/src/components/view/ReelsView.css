@@ -1,3 +1,31 @@
+.service-inforeels p {
+    margin-top: 22px;
+}
+.icon-servicesreels {
+    padding: 10px;
+    background: #ff306a;
+    color: white;
+    border-radius: 50%;
+}
+.info-item {
+    display: flex;
+    flex-direction: column;
+    margin: 21px;
+    padding: 10px;
+    border-radius: 24px;
+    justify-content: center;
+    align-items: center;
+    background:  rgba(237, 236, 237, 0.85);
+}
+.service-inforeels {
+    BORDER: 1px solid #ccc;
+    border-radius: 24px;
+    position: fixed;
+    left: 1%;
+    TOP: 150px;
+    width: 23%;
+    FLEX-DIRECTION: column;
+}
 .reels-view {
     display: flex;
     justify-content: center;
@@ -74,3 +102,16 @@
     background-color: #e02d61; /* Darker shade on hover */
 }
 
+.reserve-button {
+    position: absolute;
+    bottom: -324px;
+    left: 19%;
+    padding: 10px 20px;
+    background-color: #ff306a;
+    transition: background-color 0.3s ease;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}

@@ -1,52 +1,58 @@
 .search-results {
   padding: 8px 0;
-  TOP: 1px;
-  width: 350px;
+  width: 350px; /* Fixed width */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
   left: -20px;
   border-bottom: 1px solid #ccc;
   border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc; 
+  border-right: 1px solid #ccc;
   border-radius: 0px 0px 22px 22px;
   background-color: #ffffff;
-  height: 400px;
-  position: relative;
+  height: 450px; /* Fixed height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Arrange children in a column */
 }
+
 @media (max-width: 768px) {
   .search-results {
-    padding: 10PX; 
+    padding: 10px;
     width: 178%;
-    height: 500px;
+    height: 300px; /* Maintain fixed height */
     top: -6px;
     left: -74%;
   }
 }
+
 .search-result-item {
+  display: flex; /* Flexbox for item layout */
   background-color: white;
-  padding: 3PX;
+  padding: 10px; /* Padding inside each item */
   cursor: pointer;
+  margin: 4px 0; /* Space between items */
+  width: 100%; /* Take full width of the container */
+  height: 120px; /* Fixed height for uniformity */
+  align-items: center; /* Center content vertically */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 .result-item:hover {
-  background-color: none;
+  background-color: #f0f0f0; /* Change background on hover */
 }
 
-.result-item:last-child {
-  border-bottom: none;
+.search-result-content {
+  display: flex;
+  align-items: center;
+  flex: 1; /* Allow the content to take available space */
 }
 
 .search-result-item h3 {
   color: black;
-  position: relative;
   font-weight: bold;
-  left: 33%;
-}
-.search-result-item p {
-  color: red;
-  position: relative;
-  margin-top: -60px;
-  margin-bottom: 50px;
-  left: 30%;
+  margin-left: 10px;
+  text-decoration: none; /* Ensure no underline on h3 */
+  flex: 1; /* Allow title to take available space */
 }
 
 .result-description {
@@ -55,19 +61,17 @@
 }
 
 .search-result-images {
-  margin-top: -60px;
-  padding: 5px;
+  margin-right: 10px; /* Margin for spacing */
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid #DDD;
-  border-radius: 8px;
-  background-color: #c6c0c01a;
 }
+
+.search-result-images img {
+  width: 90px; /* Fixed width for images */
+  height: 90px; /* Fixed height for images */
+  border-radius: 50%; /* Circular image */
+}
+
 .search-result-images:hover {
   background: #dad8d8;
 }
-.search-result-images img {
-  width: 100PX;
-  height: 100px;
-  border-radius: 50%;
-}
+

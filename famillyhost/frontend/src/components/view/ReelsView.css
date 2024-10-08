@@ -27,6 +27,7 @@
     FLEX-DIRECTION: column;
 }
 .reels-view {
+    height: 541px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,4 +115,65 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+}
+@media (max-width: 768px) {
+    .service-inforeels {
+          display: none;
+    }
+
+    .reels-view {
+        z-index: 133333;
+        max-width: 100%; /* Make it take the full width of the screen */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .reel-item {
+        width: 100%; /* Make the reel item take the full width on small screens */
+    }
+
+    .reel-player {
+        width: 100%; /* Make the video fully responsive */
+    }
+
+    .navigation-buttons {
+        max-width: 200px; /* Reduce button width for smaller screens */
+        left: 50%;
+        transform: translateX(-50%); /* Center navigation buttons */
+    }
+
+    .nav-button {
+        width: 30px; /* Smaller button size for mobile */
+        height: 30px;
+        margin: 0 -20px; /* Adjust spacing between buttons */
+    }
+
+    .reserve-button {
+        bottom: -300px; /* Adjust bottom position on smaller screens */
+        left: 10%; /* Center reserve button on small screens */
+        font-size: 12px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .service-inforeels {
+       display: none;
+    }
+
+    .reels-view {
+        z-index: 133333;
+        padding: 10px; /* Further reduce padding for very small screens */
+    }
+
+    .reel-item {
+        width: 100%; /* Full width on very small screens */
+    }
+
+    .nav-button {
+        width: 25px; /* Even smaller buttons for very small screens */
+        height: 25px;
+    }
+
+    .reserve-button {
+        font-size: 10px; /* Adjust font size for very small screens */
+    }
 }

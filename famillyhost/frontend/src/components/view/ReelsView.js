@@ -10,6 +10,7 @@ const ReelsView = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [services, setServices] = useState({});
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     const fetchReels = async () => {
@@ -37,6 +38,24 @@ const ReelsView = () => {
 
     fetchReels();
   }, []);
+
+  useEffect(() => {
+    if (reels.length > 0 && services[reels[currentReelIndex]?.user?._id]) {
+      const currentServiceId = services[reels[currentReelIndex]?.user?._id]._id;
+
+      // Fetch comments for the current service
+      const fetchComments = async () => {
+        try {
+          const response = await axios.get(`http://localhost:5000/api/comments/${currentServiceId}`);
+          setComments(response.data);
+        } catch (err) {
+          console.error('Error fetching comments:', err);
+        }
+      };
+
+      fetchComments();
+    }
+  }, [reels, currentReelIndex, services]);
 
   const handleNext = () => {
     setCurrentReelIndex((prevIndex) => (prevIndex + 1) % reels.length);
@@ -99,6 +118,24 @@ const ReelsView = () => {
                     <FontAwesomeIcon icon={faUtensils} className="icon-servicesreels" />
                     <p>{currentService.eatName}</p>
                   </div>
+                </div>
+
+                {/* Comments Section */}
+                <div className="comments-list-reels">
+                  {comments.map((comment) => (
+                    <div key={comment._id} className="comment-card-reels">
+                      <div className="comment-header-reels">
+                        {comment.image && <img src={`http://localhost:5000/uploadscoment/${comment.image}`} alt="Comment" className="comment-image" />}
+                        <strong>{comment.name}</strong>
+                      </div>
+                      <p>{comment.comment}</p>
+                      <div className="star-rating-reels">
+                        {[...Array(comment.rating)].map((_, i) => (
+                          <span key={i} className="star filled">&#9733;</span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </>
             )}
